@@ -6,7 +6,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.join(__dirname, '/build/static'),
-        filename: 'js/[name].bundle.js'
+        filename: 'js/[name].bundle.js',
     },
     module: {
         rules: [
@@ -37,7 +37,6 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html',
-            filename: '../index.html',
             inject: true,
             // favicon: "./src/public/favicon.ico"
         }),
@@ -51,11 +50,8 @@ module.exports = {
         //         target: "http://localhost:5000"
         //     }
         // },
-        contentBase: path.resolve(__dirname, '/build/static'),
-        watchContentBase: true,
         port: 3000,
         hot: true,
-        historyApiFallback: true,
         open: true
     }
 }
