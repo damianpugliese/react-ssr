@@ -38,7 +38,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './public/index.html',
             inject: true,
-            // favicon: "./src/public/favicon.ico"
+            favicon: "./public/favicon.ico"
         }),
         new MiniCssExtractPlugin({
             filename: 'css/styles.css'
