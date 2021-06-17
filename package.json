@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client-install": "npm install --prefix client",
+    "server-install": "npm install --prefix server",
+    "client": "npm start --prefix client",
+    "server:prod": "npm run server --prefix server",
+    "server:dev": "npm start --prefix server",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
+    "heroku-prebuild": "npm install --prefix server",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --dev --prefix client && npm run build --prefix client"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Damián Pugliese",
+  "license": "MIT",
   "devDependencies": {
-    "sass-loader": "^12.1.0"
+    "concurrently": "^6.2.0"
   }
 }
